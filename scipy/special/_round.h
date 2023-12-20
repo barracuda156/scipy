@@ -8,6 +8,10 @@
 #include <math.h>
 #include "cephes/dd_idefs.h"
 
+#if defined(__cplusplus)
+#include <cmath>
+using std::isnan;
+#endif
 
 double add_round_up(double a, double b)
 {

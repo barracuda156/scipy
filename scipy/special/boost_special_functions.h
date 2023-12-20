@@ -190,7 +190,7 @@ Real hyp1f1_wrap(Real a, Real b, Real x)
 {
     Real y;
 
-    if (isnan(a) || isnan(b) || isnan(x)) {
+    if (std::isnan(a) || std::isnan(b) || std::isnan(x)) {
         return NAN;
     }
     if (b <= 0 && std::trunc(b) == b) {

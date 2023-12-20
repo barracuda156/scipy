@@ -83,6 +83,8 @@ extern "C" {
 #include <cfloat>
 
 using std::complex;
+using std::isinf;
+using std::isnan;
 
 #define TWOITERTOL DBL_EPSILON
 
