@@ -4,8 +4,12 @@ py3.extension_module('_test_fortran',
     '_test_fortran.f'
   ],
   c_args: [Wno_unused_variable],
+  include_directories: ['/opt/local/include/LegacySupport'],
   fortran_args: fortran_ignore_warnings,
-  link_args: version_link_args,
+  link_args: [
+    version_link_args,
+    '-Wl,-lMacportsLegacySupport'
+  ],
   dependencies: [lapack_dep, fortranobject_dep],
   install: true,
   link_language: 'fortran',

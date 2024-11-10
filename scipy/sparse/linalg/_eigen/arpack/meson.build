@@ -102,7 +102,11 @@ arpack_module = custom_target('arpack_module',
 _arpack = py3.extension_module('_arpack',
   arpack_module,
   link_with: arpack_lib,
-  link_args: version_link_args,
+  link_args: [
+    version_link_args,
+    '-Wl,-lMacportsLegacySupport'
+  ],
+  include_directories: ['/opt/local/include/LegacySupport'],
   dependencies: [lapack_dep, blas_dep, fortranobject_dep],
   install: true,
   link_language: 'fortran',

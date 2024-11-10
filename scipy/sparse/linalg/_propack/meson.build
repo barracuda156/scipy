@@ -101,9 +101,13 @@ foreach ele: elements
     f2py_gen.process(ele[2]),
     link_with: propack_lib,
     c_args: ['-U_OPENMP', _cpp_Wno_cpp],
+    include_directories: ['/opt/local/include/LegacySupport'],
     fortran_args: _fflag_Wno_maybe_uninitialized,
     dependencies: [lapack_dep, blas_dep, fortranobject_dep],
-    link_args: version_link_args,
+    link_args: [
+      version_link_args,
+      '-Wl,-lMacportsLegacySupport'
+    ],
     install: true,
     link_language: 'fortran',
     subdir: 'scipy/sparse/linalg/_propack'
