@@ -78,7 +78,7 @@ Real ibeta_wrap(Real a, Real b, Real x)
 {
     Real y;
 
-    if (isnan(a) || isnan(b) || isnan(x)) {
+    if (std::isnan(a) || std::isnan(b) || std::isnan(x)) {
         return NAN;
     }
     if ((a <= 0) || (b <= 0) || (x < 0) || (x > 1)) {
@@ -122,7 +122,7 @@ Real ibetac_wrap(Real a, Real b, Real x)
 {
     Real y;
 
-    if (isnan(a) || isnan(b) || isnan(x)) {
+    if (std::isnan(a) || std::isnan(b) || std::isnan(x)) {
         return NAN;
     }
     if ((a <= 0) || (b <= 0) || (x < 0) || (x > 1)) {
@@ -166,7 +166,7 @@ Real ibeta_inv_wrap(Real a, Real b, Real p, const Policy& policy_)
 {
     Real y;
 
-    if (isnan(a) || isnan(b) || isnan(p)) {
+    if (std::isnan(a) || std::isnan(b) || std::isnan(p)) {
         return NAN;
     }
     if ((a <= 0) || (b <= 0) || (p < 0) || (p > 1)) {
@@ -210,7 +210,7 @@ Real ibetac_inv_wrap(Real a, Real b, Real p)
 {
     Real y;
 
-    if (isnan(a) || isnan(b) || isnan(p)) {
+    if (std::isnan(a) || std::isnan(b) || std::isnan(p)) {
         return NAN;
     }
     if ((a <= 0) || (b <= 0) || (p < 0) || (p > 1)) {
@@ -428,7 +428,7 @@ Real hyp1f1_wrap(Real a, Real b, Real x)
 {
     Real y;
 
-    if (isnan(a) || isnan(b) || isnan(x)) {
+    if (std::isnan(a) || std::isnan(b) || std::isnan(x)) {
         return NAN;
     }
     if (b <= 0 && std::trunc(b) == b) {

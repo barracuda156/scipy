@@ -2,6 +2,11 @@
 
 #include "specfun/specfun.h"
 
+#if defined(__cplusplus)
+#include <cmath>
+using std::isnan;
+#endif
+
 namespace special {
 namespace detail {
 
